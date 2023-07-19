@@ -78,13 +78,13 @@ function Navbar() {
     <>
         <div className="Navbar">
             <Row>
-              <Col flex="180px">            
-                <div className="Logo"><a href=""><img src="./img/logo.png" alt="MoviesApp"  width={200} height={60}/></a></div>
+              <Col flex="160px">            
+                <div className="Logo"><a href=""><img src="./img/logo.png" alt="MoviesApp"  width={150} height={45}/></a></div>
               </Col>
-              <Col flex="auto">            
+              <Col flex="350px">            
                 <Menu className="Menu" theme="dark" mode="horizontal" items={NavbarItems} ></Menu>
               </Col>
-              <Col flex="340px">
+              <Col flex="auto" style={{display: 'flex', justifyContent: 'flex-end', marginLeft: '10px'}}>
                 <div className="SearchBar">
                   <Search
                     placeholder="Search for your movie"
@@ -97,7 +97,7 @@ function Navbar() {
                   <div className="SearchResults"></div>
                 </div>
               </Col>
-              <Col flex="120px">
+              <Col flex="96px" >
                 <Space style={{ height:'60px', lineHeight:'60px', float: 'right'}} wrap>
                   <Tooltip title="GitHub">
                     <Button type="default" icon={<GithubOutlined />} size={'large'} />

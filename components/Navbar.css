@@ -9,9 +9,6 @@
 
     padding: 0px 20px;
 }
-.ant-menu {
-    font-size: 18px !important;
-}
 .Menu {
     height: 60px;
     line-height: 60px;
@@ -19,4 +16,10 @@
 
 .Logo {
     display: inline-block;
+    margin-top: 8px;
+}
+.SearchBar {
+    max-width: 440px;
+    width: 100%;
+    min-width: 100px;
 }
