@@ -3,16 +3,18 @@
 import './Navbar.css'
 
 import { Menu , Col , Row , Space , Button , Tooltip , Input } from 'antd';
+import { GithubOutlined, CloudOutlined, CaretDownOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 
 const { Search } = Input;
-
-import { GithubOutlined, CloudOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 // items
 const NavbarItems = [
   {
-    label: 'New Movies',
-    key: 'new',
+    label: <Link href="/movies">
+              New Movies
+            </Link>,
+    key: 'movies',
   },
   {
     label: <>Movie ranking <CaretDownOutlined /></>,
@@ -72,17 +74,17 @@ const NavbarItems = [
 
 const onSearch = (value: string) => console.log(value);
 
-function Navbar() {
+function Navbar({pathname}:{pathname:string}) {
 
   return (
     <>
         <div className="Navbar">
             <Row>
               <Col flex="160px">            
-                <div className="Logo"><a href=""><img src="./img/logo.png" alt="MoviesApp"  width={150} height={45}/></a></div>
+                <div className="Logo"><Link href="/"><img src="/img/logo.png" alt="MoviesApp"  width={150} height={45}/></Link></div>
               </Col>
               <Col flex="350px">            
-                <Menu className="Menu" theme="dark" mode="horizontal" items={NavbarItems} ></Menu>
+                <Menu className="Menu" theme="dark" mode="horizontal" items={NavbarItems} selectedKeys={[pathname.substring(1,pathname.length)]}></Menu>
               </Col>
               <Col flex="auto" style={{display: 'flex', justifyContent: 'flex-end', marginLeft: '10px'}}>
                 <div className="SearchBar">
