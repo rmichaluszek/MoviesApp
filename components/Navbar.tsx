@@ -17,25 +17,25 @@ const NavbarItems = [
     key: 'movies',
   },
   {
-    label: <>Movie ranking <CaretDownOutlined /></>,
-    key: 'RankingSubMenu',
+    label: <Link href="/ranking">Movie ranking <CaretDownOutlined /></Link>,
+    key: 'ranking',
     
     children: [
       {
         type: 'item',
-        label: 'Most watched',
-        key: 'ranking:1'
+        label: <Link href="/ranking/most-watched">Most watched</Link>,
+        key: 'ranking/most-watched'
       },
       {
         type: 'item',
-        label: 'Best rating',
-        key: 'ranking:2'
+        label: <Link href="/ranking/best-rating">Best rating</Link>,
+        key: 'ranking/best-rating'
       },
     ],
   },
   {
-    label: <>Categories <CaretDownOutlined /></>,
-    key: 'CategorySubMenu',
+    label: <Link href="/categories">Categories <CaretDownOutlined /></Link>,
+    key: 'categories',
     children: [
       {
         type: 'item',
@@ -83,8 +83,8 @@ function Navbar({pathname}:{pathname:string}) {
               <Col flex="160px">            
                 <div className="Logo"><Link href="/"><img src="/img/logo.png" alt="MoviesApp"  width={150} height={45}/></Link></div>
               </Col>
-              <Col flex="350px">            
-                <Menu className="Menu" theme="dark" mode="horizontal" items={NavbarItems} selectedKeys={[pathname.substring(1,pathname.length)]}></Menu>
+              <Col flex="380px">            
+                <Menu className="Menu" mode="horizontal" items={NavbarItems} selectedKeys={[pathname.substring(1,pathname.length)]}></Menu>
               </Col>
               <Col flex="auto" style={{display: 'flex', justifyContent: 'flex-end', marginLeft: '10px'}}>
                 <div className="SearchBar">
