@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 import { useRouter } from 'next/router';
 import { usePathname, useSearchParams } from 'next/navigation'
@@ -22,6 +23,7 @@ export default function RootLayout({  children , params }: {  children: React.Re
       <body className={inter.className}>
         <Navbar pathname={usePathname()}></Navbar>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   )

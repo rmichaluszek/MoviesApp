@@ -1,0 +1,20 @@
+.Footer {
+    text-align: center;
+    height: 60px;
+
+    background-color: #001529;
+    color: white;
+
+    line-height: 60px;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+}
+.Footer a {
+    text-decoration: none;
+    color: #aaaaff;
+}
+.Footer a:hover {
+    color: #8282dd;
+}
